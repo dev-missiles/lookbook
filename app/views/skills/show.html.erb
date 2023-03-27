@@ -1,0 +1,161 @@
+<div>
+  <div>
+    <h1>
+      Skill #<%= @the_skill.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/skills">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_skill/<%= @the_skill.id %>">
+          Delete skill
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Prior skills
+      </dt>
+      <dd>
+        <%= @the_skill.prior_skills %>
+      </dd>
+
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_skill.user_id %>
+      </dd>
+
+      <dt>
+        Current skills
+      </dt>
+      <dd>
+        <%= @the_skill.current_skills %>
+      </dd>
+
+      <dt>
+        Field of interest
+      </dt>
+      <dd>
+        <%= @the_skill.field_of_interest %>
+      </dd>
+
+      <dt>
+        Github link
+      </dt>
+      <dd>
+        <%= @the_skill.github_link %>
+      </dd>
+
+      <dt>
+        Portfolio link
+      </dt>
+      <dd>
+        <%= @the_skill.portfolio_link %>
+      </dd>
+
+      <dt>
+        Linkedin link
+      </dt>
+      <dd>
+        <%= @the_skill.linkedin_link %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_skill.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_skill.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit skill
+    </h2>
+
+    <form action="/modify_skill/<%= @the_skill.id %>"  method="post" >
+      <div>
+        <label for="prior_skills_box">
+          Prior skills
+        </label>
+
+        <textarea id="prior_skills_box" name="query_prior_skills"><%= @the_skill.prior_skills %></textarea>
+      </div>
+
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_skill.user_id %>">
+      </div>
+
+      <div>
+        <label for="current_skills_box">
+          Current skills
+        </label>
+
+        <textarea id="current_skills_box" name="query_current_skills"><%= @the_skill.current_skills %></textarea>
+      </div>
+
+      <div>
+        <label for="field_of_interest_box">
+          Field of interest
+        </label>
+
+        <input type="text" id="field_of_interest_box" name="query_field_of_interest" value="<%= @the_skill.field_of_interest %>">
+      </div>
+
+      <div>
+        <label for="github_link_box">
+          Github link
+        </label>
+
+        <input type="text" id="github_link_box" name="query_github_link" value="<%= @the_skill.github_link %>">
+      </div>
+
+      <div>
+        <label for="portfolio_link_box">
+          Portfolio link
+        </label>
+
+        <input type="text" id="portfolio_link_box" name="query_portfolio_link" value="<%= @the_skill.portfolio_link %>">
+      </div>
+
+      <div>
+        <label for="linkedin_link_box">
+          Linkedin link
+        </label>
+
+        <input type="text" id="linkedin_link_box" name="query_linkedin_link" value="<%= @the_skill.linkedin_link %>">
+      </div>
+
+      <button>
+        Update skill
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

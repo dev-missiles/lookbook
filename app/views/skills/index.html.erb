@@ -1,0 +1,182 @@
+<div>
+  <div>
+    <h1>
+      List of all skills
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new skill
+    </h2>
+
+    <form action="/insert_skill" method="post">
+      <div>
+        <label for="prior_skills_box">
+          Prior skills
+        </label>
+
+        <textarea id="prior_skills_box" name="query_prior_skills" rows="3"></textarea>
+      </div>
+
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id">
+      </div>
+
+      <div>
+        <label for="current_skills_box">
+          Current skills
+        </label>
+
+        <textarea id="current_skills_box" name="query_current_skills" rows="3"></textarea>
+      </div>
+
+      <div>
+        <label for="field_of_interest_box">
+          Field of interest
+        </label>
+
+        <input type="text" id="field_of_interest_box" name="query_field_of_interest">
+      </div>
+
+      <div>
+        <label for="github_link_box">
+          Github link
+        </label>
+
+        <input type="text" id="github_link_box" name="query_github_link">
+      </div>
+
+      <div>
+        <label for="portfolio_link_box">
+          Portfolio link
+        </label>
+
+        <input type="text" id="portfolio_link_box" name="query_portfolio_link">
+      </div>
+
+      <div>
+        <label for="linkedin_link_box">
+          Linkedin link
+        </label>
+
+        <input type="text" id="linkedin_link_box" name="query_linkedin_link">
+      </div>
+
+      <button>
+        Create skill
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Prior skills
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Current skills
+        </th>
+
+        <th>
+          Field of interest
+        </th>
+
+        <th>
+          Github link
+        </th>
+
+        <th>
+          Portfolio link
+        </th>
+
+        <th>
+          Linkedin link
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_skills.each do |a_skill| %>
+      <tr>
+        <td>
+          <%= a_skill.id %>
+        </td>
+
+        <td>
+          <%= a_skill.prior_skills %>
+        </td>
+
+        <td>
+          <%= a_skill.user_id %>
+        </td>
+
+        <td>
+          <%= a_skill.current_skills %>
+        </td>
+
+        <td>
+          <%= a_skill.field_of_interest %>
+        </td>
+
+        <td>
+          <%= a_skill.github_link %>
+        </td>
+
+        <td>
+          <%= a_skill.portfolio_link %>
+        </td>
+
+        <td>
+          <%= a_skill.linkedin_link %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_skill.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_skill.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/skills/<%= a_skill.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

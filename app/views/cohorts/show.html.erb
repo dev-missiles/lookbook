@@ -1,0 +1,101 @@
+<div>
+  <div>
+    <h1>
+      Cohort #<%= @the_cohort.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/cohorts">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_cohort/<%= @the_cohort.id %>">
+          Delete cohort
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Cohort start
+      </dt>
+      <dd>
+        <%= @the_cohort.cohort_start %>
+      </dd>
+
+      <dt>
+        Name
+      </dt>
+      <dd>
+        <%= @the_cohort.name %>
+      </dd>
+
+      <dt>
+        Cohort end
+      </dt>
+      <dd>
+        <%= @the_cohort.cohort_end %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_cohort.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_cohort.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit cohort
+    </h2>
+
+    <form action="/modify_cohort/<%= @the_cohort.id %>"  method="post" >
+      <div>
+        <label for="cohort_start_box">
+          Cohort start
+        </label>
+
+        <input type="date" id="cohort_start_box" name="query_cohort_start" value="<%= @the_cohort.cohort_start %>">
+      </div>
+
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name" value="<%= @the_cohort.name %>">
+      </div>
+
+      <div>
+        <label for="cohort_end_box">
+          Cohort end
+        </label>
+
+        <input type="date" id="cohort_end_box" name="query_cohort_end" value="<%= @the_cohort.cohort_end %>">
+      </div>
+
+      <button>
+        Update cohort
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
