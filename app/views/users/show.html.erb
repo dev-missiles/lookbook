@@ -1,0 +1,118 @@
+ <body>
+    <h1> Users </h1>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Email</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Image</th>
+          <th>Cohort</th>
+          <th>Created At</th>
+          <th>Updated At</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td><%= @the_user.id %></td>
+            <td><%= @the_user.email %></td>
+            <td><%= @the_user.first_name %></td>
+            <td><%= @the_user.last_name %></td>
+            <td><%= image_tag @the_user.image %></td>
+            <td><%= @the_user.cohort.name %></td>
+            <td><%= @the_user.created_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
+            <td><%= @the_user.updated_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
+          </tr>
+      </tbody>
+    </table>
+  </body>
+
+<div>
+  <div>
+    <h1>
+      Skill #<%= @the_skill.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/skills">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_skill/<%= @the_skill.id %>">
+          Delete skill
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Prior skills
+      </dt>
+      <dd>
+        <%= @the_skill.prior_skills %>
+      </dd>
+
+      <dt>
+        User ID
+      </dt>
+      <dd>
+        <%= @the_skill.user_id %>
+      </dd>
+
+      <dt>
+        Current skills
+      </dt>
+      <dd>
+        <%= @the_skill.current_skills %>
+      </dd>
+
+      <dt>
+        Field of interest
+      </dt>
+      <dd>
+        <%= @the_skill.field_of_interest %>
+      </dd>
+
+      <dt>
+        Github link
+      </dt>
+      <dd>
+        <%= @the_skill.github_link %>
+      </dd>
+
+      <dt>
+        Portfolio link
+      </dt>
+      <dd>
+        <%= @the_skill.portfolio_link %>
+      </dd>
+
+      <dt>
+        Linkedin link
+      </dt>
+      <dd>
+        <%= @the_skill.linkedin_link %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_skill.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_skill.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
