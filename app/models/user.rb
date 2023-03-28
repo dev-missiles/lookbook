@@ -5,9 +5,12 @@
 #  id              :integer          not null, primary key
 #  email           :string
 #  first_name      :string
+#  fun_fact        :string
 #  image           :string
 #  last_name       :string
 #  password_digest :string
+#  quote           :string
+#  resume_link     :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  cohort_id       :integer
