@@ -2,6 +2,12 @@ Rails.application.routes.draw do
 
   # Routes for the User:
   
+  #Frontend Page Designs
+  get("/front1", { :controller => "users", :action => "front1"})
+  get("/front2", { :controller => "users", :action => "front2"})
+  get("/front3", { :controller => "users", :action => "front3"})
+  get("/front4", { :controller => "users", :action => "front4"})
+  
   # Homepage
   get("/", { :controller => "users", :action => "index"})
   

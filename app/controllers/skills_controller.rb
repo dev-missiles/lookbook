@@ -13,7 +13,7 @@ class SkillsController < ApplicationController
     matching_skills = Skill.where({ :id => the_id })
 
     @the_skill = matching_skills.at(0)
-
+ 
     render({ :template => "skills/show.html.erb" })
   end
 
