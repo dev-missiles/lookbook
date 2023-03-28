@@ -105,9 +105,14 @@
         </td>
 
         <td>
-          <a href="/cohorts/<%= a_cohort.id %>">
+          <button href="/cohorts/<%= a_cohort.id %>">
             Show details
-          </a>
+          </button>
+        </td>
+        <td>
+          <button href="/delete_cohort/<%= a_cohort.id %>">
+            delete
+          </button>
         </td>
       </tr>
       <% end %>
