@@ -9,6 +9,11 @@
 <hr>
 
 <div>
+  <% if @current_user == nil %>
+
+  <div></div>
+
+  <% else %>
   <div>
     <h2>
       Add a new cohort
@@ -45,6 +50,7 @@
     </form>
   </div>
 </div>
+<% end %>
 
 <hr>
 <div>
@@ -107,6 +113,11 @@
         <td>
           <a href="/cohorts/<%= a_cohort.id %>">
             Show details
+          </a>
+        </td>
+        <td>
+          <a href="/delete_cohort/<%= a_cohort.id %>">
+            delete
           </a>
         </td>
       </tr>

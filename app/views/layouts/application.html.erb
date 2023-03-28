@@ -19,6 +19,58 @@
   </head>
 
   <body>
+  <% if session.fetch(:user_id) == nil %>
+      <li>
+        <a href="/user_sign_in">Sign In</a>
+      </li>
+      <li>
+        <a href="/user_sign_up">Sign Up</a>
+      </li>
+      <li>
+        <a href="/"> Home </a>
+      </li>
+
+      <li>
+        <a href="/cohorts">Cohorts</a>
+      </li>
+
+      <li>
+        <a href="/users">Apprentices</a>
+      </li>
+
+      <% else %>
+      <li>
+        <a href="/"> Home </a>
+      </li>
+
+      <li>
+        <a href="/edit_user_profile"> Edit Profile</a>
+      </li>
+      
+      <li>
+        <a href="/cohorts">Cohorts</a>
+      </li>
+      <li>
+        <a href="/user_sign_out">Sign Out</a>
+      </li>
+      <li>
+        <%= session.fetch(:user_id) %>
+      </li>
+      <% end%>
+    </ul>
+  </nav>
+   <% if notice.present? %>
+      <div style="border: thin green solid; color: green">
+        <%= notice %>
+      </div>
+    <% end%>
+
+    <% if alert.present? %>
+      <div style="border: thin red solid; color: red">
+        <%= alert %>
+      </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

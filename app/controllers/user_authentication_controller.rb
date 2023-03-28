@@ -43,7 +43,10 @@ class UserAuthenticationController < ApplicationController
     @user.password_confirmation = params.fetch("query_password_confirmation")
     @user.first_name = params.fetch("query_first_name")
     @user.last_name = params.fetch("query_last_name")
-    @user.image = params.fetch("query_image")
+
+    #lets add this once the upload image capability is allowed
+    #@user.image = params.fetch("query_image")
+
     @user.cohort_id = params.fetch("query_cohort_id")
 
     save_status = @user.save
