@@ -1,118 +1,141 @@
- <body>
-    <h1> Users </h1>
+<style>
 
-    <table border="1">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Email</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Image</th>
-          <th>Cohort</th>
-          <th>Created At</th>
-          <th>Updated At</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr>
-            <td><%= @the_user.id %></td>
-            <td><%= @the_user.email %></td>
-            <td><%= @the_user.first_name %></td>
-            <td><%= @the_user.last_name %></td>
-            <td><img src="https://robohash.org/<%= @the_user.image %>"></td> 
-            <td><%= @the_user.cohort.name %></td>
-            <td><%= @the_user.created_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
-            <td><%= @the_user.updated_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
-          </tr>
-      </tbody>
-    </table>
-  </body>
+.fs-1, fs-6 {
+  color: #152D55;
+}
 
-<div>
-  <div>
-    <h1>
-      Skill #<%= @the_skill.id %> details
-    </h1>
+.background {
+  background-image: linear-gradient(93deg, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%);
+}
 
-    <div>
-      <div>
+.border-green {
+  border-style: solid;
+  border-color: #75C156;
+}
+
+</style>
+
+
+
+<body>
+
+  <div class="container-fluid">
+
+
+    <div class="row max-width: 100%">
+      <div class="col-lg-4 shadow-md background">
+        <div class="left-content">
+
+
+      <div class="">
         <a href="/skills">
           Go back
         </a>
       </div>
 
-      <div>
-        <a href="/delete_skill/<%= @the_skill.id %>">
-          Delete skill
-        </a>
+          <div class="m-5">
+            <img src="https://robohash.org/<%= @the_user.image %>" class="img-fluid rounded-5 border border-1">
+          </div>
+
+          <div class="text-center fs-1 fw-bold">
+            <%= @the_user.first_name %> <%= @the_user.last_name %>
+          </div>
+          <div class="fs-6 m-3 text-center fw-lighter fst-italic">
+            Software Development and Tech Apprentice
+          </div>
+
+          <div>
+
+            <div class="border-green border-2 rounded-4 m-5 p-4">
+              "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+            </div>
+          </div>
+
+          <div>
+            <div class="div-fun-fact border-green border-2 rounded-4 m-5 p-4">
+              
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget dictum diam. Nulla et nisl at diam egestas aliquet eu sed erat. Donec ut magna ut urna varius molestie. In tincidunt nibh sed urna aliquam, vel ornare urna luctus. Praesent lorem massa, imperdiet eu hendrerit ac, egestas et augue. Ut et metus vel nibh pharetra dictum. Quisque tincidunt ornare massa, in facilisis enim sollicitudin ac.
+            </div>
+
+          </div>
+
+        </div>
       </div>
+      <div class="col-lg-8 border-light-subtle shadow-lg">
+        <div class="right-content">
+
+
+<div class="m-5 border-green border-2 rounded-3 p-5" style="border-color: #75C156;">
+
+          <dl>
+            <dt>
+              Prior skills
+            </dt>
+            <dd>
+              <%= @the_skill.prior_skills %>
+            </dd>
+
+            <dt>
+              User ID
+            </dt>
+            <dd>
+              <%= @the_skill.user_id %>
+            </dd>
+
+            <dt>
+              Current skills
+            </dt>
+            <dd>
+              <%= @the_skill.current_skills %>
+            </dd>
+
+            <dt>
+              Field of interest
+            </dt>
+            <dd>
+              <%= @the_skill.field_of_interest %>
+            </dd>
+
+            <dt>
+              Github link
+            </dt>
+            <dd>
+              <%= @the_skill.github_link %>
+            </dd>
+
+            <dt>
+              Portfolio link
+            </dt>
+            <dd>
+              <%= @the_skill.portfolio_link %>
+            </dd>
+
+            <dt>
+              Linkedin link
+            </dt>
+            <dd>
+              <%= @the_skill.linkedin_link %>
+            </dd>
+
+            <dt>
+              Created at
+            </dt>
+            <dd>
+              <%= time_ago_in_words(@the_skill.created_at) %> ago
+            </dd>
+
+            <dt>
+              Updated at
+            </dt>
+            <dd>
+              <%= time_ago_in_words(@the_skill.updated_at) %> ago
+            </dd>
+          </dl>
+        </div>
+      </div>
+
     </div>
-
-    <dl>
-      <dt>
-        Prior skills
-      </dt>
-      <dd>
-        <%= @the_skill.prior_skills %>
-      </dd>
-
-      <dt>
-        User ID
-      </dt>
-      <dd>
-        <%= @the_skill.user_id %>
-      </dd>
-
-      <dt>
-        Current skills
-      </dt>
-      <dd>
-        <%= @the_skill.current_skills %>
-      </dd>
-
-      <dt>
-        Field of interest
-      </dt>
-      <dd>
-        <%= @the_skill.field_of_interest %>
-      </dd>
-
-      <dt>
-        Github link
-      </dt>
-      <dd>
-        <%= @the_skill.github_link %>
-      </dd>
-
-      <dt>
-        Portfolio link
-      </dt>
-      <dd>
-        <%= @the_skill.portfolio_link %>
-      </dd>
-
-      <dt>
-        Linkedin link
-      </dt>
-      <dd>
-        <%= @the_skill.linkedin_link %>
-      </dd>
-
-      <dt>
-        Created at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_skill.created_at) %> ago
-      </dd>
-
-      <dt>
-        Updated at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_skill.updated_at) %> ago
-      </dd>
-    </dl>
   </div>
+</div>
+
 </div>
