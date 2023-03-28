@@ -1,23 +1,30 @@
- <style>
-  div {
-    border: 1px red solid;
-  }
 
-  .row {
-  padding: 0;
-  }
+<%# 
+
+green: 60A297
+blue: #40577D
+ %>
 
 
-.container-fluid {
-  height: 100vh;
+<style>
+
+.background {
+  background-image: linear-gradient(93deg, rgba(255,255,255,1) 0%, rgba(250,250,250,1) 100%);
 }
 
 
 </style>
 
+
+
 <body>
 
   <div class="container-fluid">
+
+
+    <div class="row max-width: 100%">
+      <div class="col-lg-4 shadow-md background">
+        <div class="left-content">
 
 
       <div class="">
@@ -26,31 +33,26 @@
         </a>
       </div>
 
-
-    <div class="row max-width: 100%">
-      <div class="col-lg-4">
-        <div class="left-content">
-
           <div class="m-5">
-            <img src="https://robohash.org/<%= @the_user.image %>" class="img-fluid">
+            <img src="https://robohash.org/<%= @the_user.image %>" class="img-fluid rounded-5 border border-1">
           </div>
 
           <div class="text-center fs-1">
             <%= @the_user.first_name %> <%= @the_user.last_name %>
           </div>
-          <div class="fs-6 m-3">
+          <div class="fs-6 m-3 text-center">
             Software Development and Tech Apprentice
           </div>
 
           <div>
 
-            <div class="border border-success-subtle border-5 rounded-3 m-5 p-4">
+            <div class="border border-success-subtle border-5 rounded-4 m-5 p-4">
               "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
             </div>
           </div>
 
           <div>
-            <div class="div-fun-fact border border-success-subtle border-5 rounded-3 m-5 p-4">
+            <div class="div-fun-fact border border-success-subtle border-5 rounded-4 m-5 p-4">
               
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget dictum diam. Nulla et nisl at diam egestas aliquet eu sed erat. Donec ut magna ut urna varius molestie. In tincidunt nibh sed urna aliquam, vel ornare urna luctus. Praesent lorem massa, imperdiet eu hendrerit ac, egestas et augue. Ut et metus vel nibh pharetra dictum. Quisque tincidunt ornare massa, in facilisis enim sollicitudin ac.
             </div>
@@ -59,9 +61,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget dictum diam
 
         </div>
       </div>
-      <div class="col-lg-8">
+      <div class="col-lg-8 border-light-subtle shadow-lg">
         <div class="right-content">
-
 
 
 <div class="m-5 border border-success-subtle border-5 rounded-3 p-5">
