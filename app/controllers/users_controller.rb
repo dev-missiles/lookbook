@@ -1,4 +1,18 @@
 class UsersController < ApplicationController
+  #frontend design areas change file name to a specific area you are working one.
+  def front1
+    render({ :template => "users/frontend_1.html.erb"})
+  end
+  def front2
+    render({ :template => "users/frontend_2.html.erb"})
+  end
+  def front3
+    render({ :template => "users/frontend_3.html.erb"})
+  end
+  def front4
+    render({ :template => "users/frontend_4.html.erb"})
+  end
+  
   def index
     matching_users = User.all
     @list_of_users = matching_users.order(:last_name)
