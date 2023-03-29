@@ -1,5 +1,10 @@
-<h1>WELCOME TO OUR LOOK BOOK APPRENTICESHIP </h1>
+<h1 class="py-5">WELCOME TO OUR LOOK BOOK APPRENTICESHIP </h1>
 <div>
+<div>
+Select the cohort
+</div>
+
+<div class="mb-5">
   <select id="cohort-select" class="form-select" aria-label="Default select example">
     <option value="">Select</option>
     <option value="1">1 - September 21st </option>
@@ -8,9 +13,9 @@
   </select>
 </div>
 <div class="container">
-  <div class="row">
+  <div class="row row-cols-4 row-cols-md-4 g-4">
     <% @list_of_users.each_slice(2) do |users| %>
-      <div class="col-6 col-md-4">
+      <div class="col">
         <% users.each do |user| %>
           <% if user.cohort && user.cohort.id == params[:cohort_id].to_i %>
             <div class="cohort-<%= user.cohort.id %>">
