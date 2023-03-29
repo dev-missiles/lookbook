@@ -21,22 +21,19 @@
   <body>
   <% if session.fetch(:user_id) == nil %>
   <div class="container">
-  <nav class="navbar navbar-expand- navbar-light">
-        <a href="/" class="navbar-brand"> Lookbook </a>
-      <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#toggleMobileMenu"
-      aria-controls="toggleMobileMenu"
-      aria-expanded="false"
-      aria-lable="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-        
-      </button>
-      <div class="collapse navbar-collapse" id="toggleMobileMenu">
-        <li>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Lookbook</a>
+  <button class="navbar-toggler" 
+  type="button" data-toggle="collapse" 
+  data-target="#navbarSupportedContent" 
+  aria-controls="navbarSupportedContent" 
+  aria-expanded="false" 
+  aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
           <a class="nav-link" href="/user_sign_in">Sign In</a>
         </li>
 
@@ -54,41 +51,34 @@
 
       <% else %>
   <div class="container">
-  <nav class="navbar navbar-expand- navbar-light">
-        <a href="/" class="navbar-brand"> Lookbook </a>
-      <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#toggleMobileMenu"
-      aria-controls="toggleMobileMenu"
-      aria-expanded="false"
-      aria-lable="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Lookbook</a>
+  <button class="navbar-toggler" 
+  type="button" data-toggle="collapse" 
+  data-target="#navbarSupportedContent" 
+  aria-controls="navbarSupportedContent" 
+  aria-expanded="false" 
+  aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+          <a class="nav-link" href="/edit_user_profile"> Edit Profile</a>
+        </li>
         
-      </button>
-      <div class="collapse navbar-collapse" id="toggleMobileMenu">
-      <li>
-        <a class="nav-link" href="/"> Home </a>
-      </li>
-
-      <li>
-        <a class="nav-link" href="/edit_user_profile"> Edit Profile</a>
-      </li>
-      
-      <li>
-        <a class="nav-link" href="/cohorts">Cohorts</a>
-      </li>
-      <li>
-        <a class="nav-link" href="/user_sign_out">Sign Out</a>
-      </li>
-      <li>
-        <%= session.fetch(:user_id) %>
-      </li>
-      <% end%>
-    </ul>
-  </nav>
+        <li>
+          <a class="nav-link" href="/cohorts">Cohorts</a>
+        </li>
+        <li>
+          <a class="nav-link" href="/user_sign_out">Sign Out</a>
+        </li>
+        <li>
+         <a class="nav-link"> <%= session.fetch(:user_id) %>
+        </li>
+        <% end%>
+      </ul>
+    </nav>
    <% if notice.present? %>
       <div style="border: thin green solid; color: green">
         <%= notice %>
