@@ -1,34 +1,58 @@
-<body>
-  <h1>List of Users</h1>
+<h1>WELCOME TO OUR LOOK BOOK APPRENTICESHIP </h1>
 <div>
-  <select class="form-select" aria-label="Default select example">
-    <option selected="">Select</option>
+  <select id="cohort-select" class="form-select" aria-label="Default select example">
+    <option value="">Select</option>
     <option value="1">1 - September 21st </option>
     <option value="2">2 - January 30th </option>
     <option value="3">3 - February 27th</option>
-    </select>
+  </select>
 </div>
 <div class="container">
   <div class="row">
     <% @list_of_users.each_slice(2) do |users| %>
       <div class="col-6 col-md-4">
         <% users.each do |user| %>
-        <a href="/users/<%= user.id %>">
-          <div class="card mb-3">
-            <img src="https://robohash.org/<%= user.image %>" class="card-img-top" alt="...">
-            <div class="card-body"> 
-            <td><%= user.first_name %></td>
-            <td><%= user.last_name %></td> 
-              <p class="card-text"></p>
-              <td><%= user.cohort.name %></td>
+          <% if user.cohort && user.cohort.id == params[:cohort_id].to_i %>
+            <div class="cohort-<%= user.cohort.id %>">
+              <a href="/users/<%= user.id %>">
+                <div class="card mb-3">
+                  <img src="https://robohash.org/<%= user.image %>" class="card-img-top" alt="...">
+                  <div class="card-body"> 
+                    <td><%= user.first_name %></td>
+                    <td><%= user.last_name %></td> 
+                    <p class="card-text"></p>
+                    <% if user.cohort %>
+                      <td><%= user.cohort.name %></td>
+                    <% else %>
+                      <td>No Cohort Assigned</td>
+                    <% end %>
+                  </div>
+                </div>
+              </a>
             </div>
-          </div>
-          </a>
+          <% end %>
         <% end %>
       </div>
     <% end %>
   </div>
 </div>
+
+<script>
+  // Get a reference to the select element
+  const cohortSelect = document.getElementById('cohort-select');
+
+  // Listen for changes to the select element
+  cohortSelect.addEventListener('change', () => {
+    // Get the selected option's value
+    const selectedValue = cohortSelect.value;
+    
+    // Set the cohort ID parameter in the URL
+    const url = new URL(window.location.href);
+    url.searchParams.set('cohort_id', selectedValue);
+    window.location.href = url.toString();
+  });
+</script>
+
 
 
 
