@@ -1,48 +1,58 @@
-<h1>Sign up</h1>
+<div class="container min-vh-100 d-flex justify-content-center align-items-center ">
 
 <form action="/insert_user" method="post">
 
-  <div>
-    <label for="email_box">Email</label>
-    <input id="email_box" name="query_email" placeholder="Choose a email..." type="text">
+  <div class="mb-4">
+    <label for="email_box" class="form-label">Email</label>
+
+    <input id="email_box" class="form-control" name="query_email" id="exampleInputEmail1" placeholder="Choose an email..." type="text" aria-describebdy="emailHelp">
+    <div id="emailHelp" class="form-text"></div>
   </div>
                  
-  <div>
-    <label for="first_name_box">First name</label>
+  <div class="mb-4">
+    <label for="first_name_box" class="form-label">First name</label>
       
-    <input type="text" id="first_name_box" name="query_first_name">
+    <input type="text" class="form-control" placeholder="Enter First Name..."id="first_name_box" name="query_first_name">
   </div>
          
-  <div>
-    <label for="last_name_box">Last name</label>
+  <div class="mb-4">
+    <label for="last_name_box" class="form-label">Last name</label>
       
-    <input type="text" id="last_name_box" name="query_last_name">
+    <input type="text" placeholder="Enter Last Name..."class="form-control" id="last_name_box" name="query_last_name">
   </div>
          
   
-  <div>
-    <label for="cohort_id_box">Cohort</label>
-      
-    <input type="text" id="cohort_id_box" name="query_cohort_id">
+  <div class="mb-4"> 
+    <label for="last_name_box" class="form-label">Select Cohort</label>
+    <select class="form-select" aria-label="Default select example">
+    <option selected>Select</option>
+    <option value="1">1 - September 21st </option>
+    <option value="2">2 - January 30th </option>
+    <option value="3">3 - February 27th</option>
+    </select>
   </div>
     
-  <div>
-    <label for="password_box">Password</label>
-    <input id="password_box" name="query_password" placeholder="Choose a password..." type="password">
+  <div class="mb-4"> 
+    <label for="password_box" class="form-label">Password</label>
+
+    <input id="password_box" class="form-control" name="query_password" placeholder="Choose a password..." type="password">
   </div>
 
-  <div>
-    <label for="password_confirmation_box">Password Confirmation</label>
-    <input id="password_confirmation_box" name="query_password_confirmation" placeholder="Confirm your password..." type="password">
+  <div class="mb-4">
+    <label for="password_confirmation_box" class="form-label">Password Confirmation</label>
+
+    <input id="password_confirmation_box" class="form-control" name="query_password_confirmation" placeholder="Confirm your password..." type="password">
   </div>
 
-  <button>
-    Sign up
+  <button type="submit" class="btn btn-primary" >
+    Register
   </button>
 </form>
+</div>
 
-<hr>
 
+<div class="container d-flex justify-content-center">
 <p>
   Or, <a href="/user_sign_in">Sign in</a> instead.
 </p>
+</div>
