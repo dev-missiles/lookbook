@@ -22,7 +22,7 @@
   <% if session.fetch(:user_id) == nil %>
   <div class="container">
   <nav class="navbar navbar-expand- navbar-light">
-        <a href="/" class="navbar-brand"> Home </a>
+        <a href="/" class="navbar-brand"> Lookbook </a>
       <button
       class="navbar-toggler"
       type="button"
@@ -53,19 +53,35 @@
         </li>
 
       <% else %>
+  <div class="container">
+  <nav class="navbar navbar-expand- navbar-light">
+        <a href="/" class="navbar-brand"> Lookbook </a>
+      <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#toggleMobileMenu"
+      aria-controls="toggleMobileMenu"
+      aria-expanded="false"
+      aria-lable="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+        
+      </button>
+      <div class="collapse navbar-collapse" id="toggleMobileMenu">
       <li>
-        <a href="/"> Home </a>
+        <a class="nav-link" href="/"> Home </a>
       </li>
 
       <li>
-        <a href="/edit_user_profile"> Edit Profile</a>
+        <a class="nav-link" href="/edit_user_profile"> Edit Profile</a>
       </li>
       
       <li>
-        <a href="/cohorts">Cohorts</a>
+        <a class="nav-link" href="/cohorts">Cohorts</a>
       </li>
       <li>
-        <a href="/user_sign_out">Sign Out</a>
+        <a class="nav-link" href="/user_sign_out">Sign Out</a>
       </li>
       <li>
         <%= session.fetch(:user_id) %>
