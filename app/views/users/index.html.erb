@@ -1,6 +1,13 @@
 <body>
   <h1>List of Users</h1>
-
+<div>
+  <select class="form-select" aria-label="Default select example">
+    <option selected="">Select</option>
+    <option value="1">1 - September 21st </option>
+    <option value="2">2 - January 30th </option>
+    <option value="3">3 - February 27th</option>
+    </select>
+</div>
 <div class="container">
   <div class="row">
     <% @list_of_users.each_slice(2) do |users| %>
