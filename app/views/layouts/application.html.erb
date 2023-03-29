@@ -20,23 +20,37 @@
 
   <body>
   <% if session.fetch(:user_id) == nil %>
-      <li>
-        <a href="/user_sign_in">Sign In</a>
-      </li>
-      <li>
-        <a href="/user_sign_up">Sign Up</a>
-      </li>
-      <li>
-        <a href="/"> Home </a>
-      </li>
+  <div class="container">
+  <nav class="navbar navbar-expand- navbar-light">
+        <a href="/" class="navbar-brand"> Home </a>
+      <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#toggleMobileMenu"
+      aria-controls="toggleMobileMenu"
+      aria-expanded="false"
+      aria-lable="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+        
+      </button>
+      <div class="collapse navbar-collapse" id="toggleMobileMenu">
+        <li>
+          <a class="nav-link" href="/user_sign_in">Sign In</a>
+        </li>
 
-      <li>
-        <a href="/cohorts">Cohorts</a>
-      </li>
+        <li>
+          <a class="nav-link" href="/user_sign_up">Sign Up</a>
+        </li>
 
-      <li>
-        <a href="/users">Apprentices</a>
-      </li>
+        <li>
+          <a class="nav-link" href="/cohorts">Cohorts</a>
+        </li>
+
+        <li>
+          <a class="nav-link" href="/users">Apprentices</a>
+        </li>
 
       <% else %>
       <li>
