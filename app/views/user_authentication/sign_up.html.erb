@@ -1,43 +1,44 @@
-<div class="container min-vh-100 d-flex justify-content-center align-items-center ">
+
+<div class="container-fluid min-vh-50 d-flex justify-content-center align-items-center">
 
 <form action="/insert_user" method="post">
 
-  <div class="mb-4">
-    <label for="email_box" class="form-label">Email</label>
+  <div class="mb-4 ">
+    <label for="email_box " class="form-label">Email</label>
 
-    <input id="email_box" class="form-control" name="query_email" id="exampleInputEmail1" placeholder="Choose an email..." type="text" aria-describebdy="emailHelp">
+    <input id="email_box" class="form-control border-green" name="query_email" id="exampleInputEmail1" placeholder="Choose an email..." type="text" aria-describebdy="emailHelp">
     <div id="emailHelp" class="form-text"></div>
   </div>
                  
   <div class="mb-4">
     <label for="first_name_box" class="form-label">First name</label>
       
-    <input type="text" class="form-control" placeholder="Enter First Name..."id="first_name_box" name="query_first_name">
+    <input type="text" class="form-control border-green" placeholder="Enter First Name..."id="first_name_box" name="query_first_name">
   </div>
          
   <div class="mb-4">
     <label for="last_name_box" class="form-label">Last name</label>
       
-    <input type="text" placeholder="Enter Last Name..."class="form-control" id="last_name_box" name="query_last_name">
+    <input type="text" placeholder="Enter Last Name..."class="form-control border-green" id="last_name_box" name="query_last_name">
   </div>
          
   
   <div class="mb-4"> 
     <label for="cohort_box" class="form-label">Select Cohort</label>
 
-    <input id="cohort_box" class="form-control" name="query_cohort_id" placeholder="Choose a cohort..." type="cohort">
+    <input id="cohort_box" class="form-control border-green" name="query_cohort_id" placeholder="Choose a cohort..." type="cohort">
   </div>
     
   <div class="mb-4"> 
     <label for="password_box" class="form-label">Password</label>
 
-    <input id="password_box" class="form-control" name="query_password" placeholder="Choose a password..." type="password">
+    <input id="password_box" class="form-control border-green" name="query_password" placeholder="Choose a password..." type="password">
   </div>
 
   <div class="mb-4">
     <label for="password_confirmation_box" class="form-label">Password Confirmation</label>
 
-    <input id="password_confirmation_box" class="form-control" name="query_password_confirmation" placeholder="Confirm your password..." type="password">
+    <input id="password_confirmation_box" class="form-control border-green" name="query_password_confirmation" placeholder="Confirm your password..." type="password">
   </div>
 
   <button type="submit" class="btn btn-primary" >
@@ -52,3 +53,12 @@
   Or, <a href="/user_sign_in">Sign in</a> instead.
 </p>
 </div>
+
+
+
+<style>
+  .border-green {
+    border-style: solid;
+    border-color: #75C156;
+  }
+</style>
