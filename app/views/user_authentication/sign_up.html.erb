@@ -1,58 +1,80 @@
-<div class="container min-vh-100 d-flex justify-content-center align-items-center ">
+
+<div class="container-fluid min-vh-50 d-flex justify-content-center align-items-center">
 
 <form action="/insert_user" method="post">
 
-  <div class="mb-4">
-    <label for="email_box" class="form-label">Email</label>
+  <div class="mb-4 ">
+    <label for="email_box " class="form-label">Email</label>
 
-    <input id="email_box" class="form-control" name="query_email" id="exampleInputEmail1" placeholder="Choose an email..." type="text" aria-describebdy="emailHelp">
+    <input id="email_box" class="form-control border-green" name="query_email" id="exampleInputEmail1" placeholder="Choose an email..." type="text" aria-describebdy="emailHelp">
     <div id="emailHelp" class="form-text"></div>
   </div>
                  
   <div class="mb-4">
     <label for="first_name_box" class="form-label">First name</label>
       
-    <input type="text" class="form-control" placeholder="Enter First Name..."id="first_name_box" name="query_first_name">
+    <input type="text" class="form-control border-green" placeholder="Enter First Name..."id="first_name_box" name="query_first_name">
   </div>
          
   <div class="mb-4">
     <label for="last_name_box" class="form-label">Last name</label>
       
-    <input type="text" placeholder="Enter Last Name..."class="form-control" id="last_name_box" name="query_last_name">
+    <input type="text" placeholder="Enter Last Name..."class="form-control border-green" id="last_name_box" name="query_last_name">
   </div>
          
   
-  <div class="mb-4"> 
-    <label for="last_name_box" class="form-label">Select Cohort</label>
-    <select class="form-select" aria-label="Default select example">
-    <option selected>Select</option>
-    <option value="1">1 - September 21st </option>
-    <option value="2">2 - January 30th </option>
-    <option value="3">3 - February 27th</option>
+  <div class="mb-4">
+    <select name="query_cohort_id" id="cohort-select" class="form-select" aria-label="Default select example">
+      <option value=""> Select Cohort</option>
+      <option value="1">1 - September 21st </option>
+      <option value="2">2 - January 30th </option>
+      <option value="3">3 - February 27th</option>
     </select>
   </div>
     
   <div class="mb-4"> 
     <label for="password_box" class="form-label">Password</label>
 
-    <input id="password_box" class="form-control" name="query_password" placeholder="Choose a password..." type="password">
+    <input id="password_box" class="form-control border-green" name="query_password" placeholder="Choose a password..." type="password">
   </div>
 
   <div class="mb-4">
     <label for="password_confirmation_box" class="form-label">Password Confirmation</label>
 
-    <input id="password_confirmation_box" class="form-control" name="query_password_confirmation" placeholder="Confirm your password..." type="password">
+    <input id="password_confirmation_box" class="form-control border-green" name="query_password_confirmation" placeholder="Confirm your password..." type="password">
   </div>
 
-  <button type="submit" class="btn btn-primary" >
-    Register
-  </button>
+  <div class="container min-vh-50 d-flex justify-content-center">
+    <button type="submit" class="btn btn-primary" >
+      Register
+    </button>
+  </div>
 </form>
 </div>
 
+<hr>
 
-<div class="container d-flex justify-content-center">
-<p>
-  Or, <a href="/user_sign_in">Sign in</a> instead.
-</p>
-</div>
+<footer>
+  <div class="container d-flex justify-content-center">
+    <p>
+      Or, <a href="/user_sign_in">Sign in</a> instead.
+    </p>
+  </div>
+</footer>
+
+<style>
+  .border-green {
+    border-style: solid;
+    border-color: #75C156;
+    width: 350px;
+  }
+  .mb-4 {
+    padding-top: 20px;
+    margin: 20px;
+  }
+  .form-select {
+    border-style: solid;
+    border-color: #75C156;
+    width: 350px;
+  }
+</style>

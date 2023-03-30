@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_28_173727) do
+ActiveRecord::Schema.define(version: 2023_03_30_143918) do
 
   create_table "cohorts", force: :cascade do |t|
     t.date "cohort_start"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2023_03_28_173727) do
     t.date "cohort_end"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "cohort_id"
   end
 
   create_table "skills", force: :cascade do |t|

@@ -1,6 +1,6 @@
 
 
-<div class="container min-vh-100 d-flex justify-content-center align-items-center" >
+<div class="container min-vh-50 d-flex justify-content-center align-items-center" >
 
 
 
@@ -8,28 +8,42 @@
   <div class="mb-4">
     <label for="email_box" class="form-label">Email</label>
 
-    <input id="email_box" name="query_email" class="form-control" placeholder="Enter your email..." type="text" aria-describebdy="emailHelp">
+    <input id="email_box" name="query_email" class="form-control border-green" placeholder="Enter your email..." type="text" aria-describebdy="emailHelp">
      <div id="emailHelp" class="form-text"></div>
   </div>
 
   <div class="mb-4">
     <label for="password_box">Password</label>
 
-    <input id="password_box" class="form-control" name="query_password" placeholder="Enter your password..." type="password">
+    <input id="password_box" class="form-control border-green" name="query_password" placeholder="Enter your password..." type="password">
   </div>
 
-  <button type="submit" class="btn btn-primary">
-    Sign in
-  </button>
+  <div class="container min-vh-50 d-flex justify-content-center">
+    <button type="submit" class="btn btn-primary">
+      Sign in
+    </button>
+  </div>
 </form>
-
 </div>
 
 
+<hr>
+<footer>
+  <div class="container min-vh-100 d-flex justify-content-center">
+    <p>
+      New member? <a href="/user_sign_up">Sign up</a>
+    </p>
+  </div>
+</footer>
 
-<div class="container d-flex justify-content-center">
-<p>
-  New member? <a href="/user_sign_up">Sign up</a>
-</p>
-
-</div>
+<style>
+  .border-green {
+    border-style: solid;
+    border-color: #75C156;
+    width: 350px;
+  }
+  .mb-4 {
+    padding-top: 20px;
+    margin: 20px;
+  }
+</style>
