@@ -1,6 +1,6 @@
 
 
-<div class="container min-vh-100 d-flex justify-content-center align-items-center" >
+<div class="container min-vh-50 d-flex justify-content-center align-items-center" >
 
 
 
@@ -18,26 +18,32 @@
     <input id="password_box" class="form-control border-green" name="query_password" placeholder="Enter your password..." type="password">
   </div>
 
-  <button type="submit" class="btn btn-primary">
-    Sign in
-  </button>
+  <div class="container min-vh-50 d-flex justify-content-center">
+    <button type="submit" class="btn btn-primary">
+      Sign in
+    </button>
+  </div>
 </form>
-
 </div>
 
 
-
-<div class="container d-flex justify-content-center">
-<p>
-  New member? <a href="/user_sign_up">Sign up</a>
-</p>
-
-</div>
+<hr>
+<footer>
+  <div class="container min-vh-100 d-flex justify-content-center">
+    <p>
+      New member? <a href="/user_sign_up">Sign up</a>
+    </p>
+  </div>
+</footer>
 
 <style>
   .border-green {
     border-style: solid;
     border-color: #75C156;
     width: 350px;
+  }
+  .mb-4 {
+    padding-top: 20px;
+    margin: 20px;
   }
 </style>
