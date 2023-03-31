@@ -32,7 +32,7 @@
 - [Acknowledgments](#acknowledgement)
 <!---Features?-->
 
-## 🧐 Introduction <a name = "Introduction"></a>
+## 🧐 Introduction <a name = "introduction"></a>
 The Dev-Missiles look book project is a web-based look book application designed to help users create and share apprentices, cohorts and their qualifications with potential business partners. With it users can easily create personalize profiles using the built in system and showcase them to others in a look book format. This makes it easy to view and manage multiple apprentices and cohorts while showcasing the work they are currently doing in to get in their industry.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
