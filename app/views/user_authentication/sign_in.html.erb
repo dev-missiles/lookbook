@@ -1,49 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <%= stylesheet_link_tag 'sign_in.css' %>
+</head>
+<body>
+  <section>
+    <div class = "form-box" >
+      <div class="form-value">
+        <form action="/user_verify_credentials" method="post">
+          <h2> Sign in</h2>
+          <div class="inputbox">
+            <ion-icon name="mail-outline"></ion-icon>
+            <input name="query_email" type="email" required>
+            <label for="">Email</label>
+          </div>
+          <div class="inputbox">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+            <input name="query_password" type="password" required>
+            <label for="">Password</label>
+          </div>
+          <button type="submit"> Sign in</button>
+          <div class="register">
+            <p>Don't have an account <a href=""> Register</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+
+<%# # <div class="container min-vh-50 d-flex justify-content-center align-items-center" >
 
 
-<div class="container min-vh-50 d-flex justify-content-center align-items-center" >
+
+# <form action="/user_verify_credentials" method="post">
+#   <div class="mb-4">
+#     <label for="email_box" class="form-label">Email</label>
+
+#     <input id="email_box" name="query_email" class="form-control border-green" placeholder="Enter your email..." type="text" aria-describebdy="emailHelp">
+#      <div id="emailHelp" class="form-text"></div>
+#   </div>
+
+#   <div class="mb-4">
+#     <label for="password_box">Password</label>
+
+#     <input id="password_box" class="form-control border-green" name="query_password" placeholder="Enter your password..." type="password">
+#   </div>
+
+#   <div class="container min-vh-50 d-flex justify-content-center">
+#     <button type="submit" class="btn btn-primary">
+#       Sign in
+#     </button>
+#   </div>
+# </form>
+# </div>
 
 
+# <hr>
+# <footer>
+#   <div class="container min-vh-100 d-flex justify-content-center">
+#     <p>
+#       New member? <a href="/user_sign_up">Sign up</a>
+#     </p>
+#   </div>
+# </footer>
 
-<form action="/user_verify_credentials" method="post">
-  <div class="mb-4">
-    <label for="email_box" class="form-label">Email</label>
-
-    <input id="email_box" name="query_email" class="form-control border-green" placeholder="Enter your email..." type="text" aria-describebdy="emailHelp">
-     <div id="emailHelp" class="form-text"></div>
-  </div>
-
-  <div class="mb-4">
-    <label for="password_box">Password</label>
-
-    <input id="password_box" class="form-control border-green" name="query_password" placeholder="Enter your password..." type="password">
-  </div>
-
-  <div class="container min-vh-50 d-flex justify-content-center">
-    <button type="submit" class="btn btn-primary">
-      Sign in
-    </button>
-  </div>
-</form>
-</div>
-
-
-<hr>
-<footer>
-  <div class="container min-vh-100 d-flex justify-content-center">
-    <p>
-      New member? <a href="/user_sign_up">Sign up</a>
-    </p>
-  </div>
-</footer>
-
-<style>
-  .border-green {
-    border-style: solid;
-    border-color: #75C156;
-    width: 350px;
-  }
-  .mb-4 {
-    padding-top: 20px;
-    margin: 20px;
-  }
-</style>
+# <style>
+#   .border-green {
+#     border-style: solid;
+#     border-color: #75C156;
+#     width: 350px;
+#   }
+#   .mb-4 {
+#     padding-top: 20px;
+#     margin: 20px;
+#   }
+# </style> %>
