@@ -1,3 +1,4 @@
+<!-- WIP -->
 # Look Book Changelogs
 Welcome to the Look Book Changelogs page! Here, you'll find information about the latest updates, bug fixes, new features & more to our application.
 
