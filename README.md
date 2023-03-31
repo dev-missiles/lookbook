@@ -33,10 +33,10 @@
 <!---Features?-->
 
 ## 🧐 Introduction <a name = "Introduction"></a>
-The Dev-Missiles look book project is a web-based look book application designed to help users create and share apprentices,cohorts and their qualifications with potential business partners. With it users can easily create personalize profiles using the built in system and showcase them to others in a look book format. This makes it easy to view and manage multiple apprentices and cohorts while showcasing the work they are currently doing in to get in their industry.
+The Dev-Missiles look book project is a web-based look book application designed to help users create and share apprentices, cohorts and their qualifications with potential business partners. With it users can easily create personalize profiles using the built in system and showcase them to others in a look book format. This makes it easy to view and manage multiple apprentices and cohorts while showcasing the work they are currently doing in to get in their industry.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
-To get started with using our team look book application, you will need to download the application codebase. The codebase is available [here](google.com), on our Github page and can be downloaded by cloning the repository to your local machine.
+To get started with using our team look book application, you will need to download the application codebase. The codebase is available [here](https://github.com/dev-missles/lookbook), on our Github page and can be downloaded by cloning the repository to your local machine.
 
 ## ⚙️ Usage <a name="usage"></a>
 Creating look books with our application is very simple and easy to do. After downloading and installing the required dependencies, use the provided user documentation to understand how to properly use and/or manage your product.
