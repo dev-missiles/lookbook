@@ -23,25 +23,24 @@
   </head>
 
   <body>
-  <% if session.fetch(:user_id) == nil %>
 
-  <div class="container-fluid">
-  <nav class="navbar navbar-expand-lg navbar-light bg-white">
-  <a class="navbar-brand" href="/">
-  <img src="image1.jpg" style="height: 70px;"></a> </a>
-  <button class="navbar-toggler" 
-  type="button" data-toggle="collapse" 
-  data-target="#navbarSupportedContent" 
-  aria-controls="navbarSupportedContent" 
-  aria-expanded="false" 
-  aria-label="Toggle navigation">
+  <div class="container-fluid" style="margin: 0; padding: 0;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-lg">
+    <a class="navbar-brand" href="/">
+    <img src="<%= image_url("dpi.jpg") %>" style="height: 70px;"></a>
+    <button class="navbar-toggler" 
+    type="button" data-toggle="collapse" 
+    data-target="#navbarSupportedContent" 
+    aria-controls="navbarSupportedContent" 
+    aria-expanded="false" 
+    aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-  </button>
+    </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
 
         <li class="nav-item active">
-          <a class="navbar-brand" href="/">Lookbook</a>
+          <a class="navbar-brand" href="/"><span class="fs-4">Lookbook</span></a>
         </li>
 
         <li class="nav-item">
@@ -56,54 +55,22 @@
           <a class="nav-link" href="/cohorts">Cohorts</a>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="/users">Home</a>
-        </li>
-      </ul>
-  
-
-  <% else %>
-
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-white">
-    <a class="navbar-brand" href="/">
-      <img src="image1.jpg"></a> </a>
-  <button class="navbar-toggler" 
-  type="button" data-toggle="collapse" 
-  data-target="#navbarSupportedContent" 
-  aria-controls="navbarSupportedContent" 
-  aria-expanded="false" 
-  aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-
-          <li class="nav-item active">
-          <a class="navbar-brand" href="/">Lookbook</a>
+<% if @current_user != nil %>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/<%= @current_user.id %>"> My Profile</a>
           </li>
-      
+
           <li class="nav-item">
             <a class="nav-link" href="/edit_user_profile"> Edit Profile</a>
           </li>
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/cohorts">Cohorts</a>
-          </li>
+          <% end %>
 
-          <li class="nav-item">
-            <a class="nav-link" href="/user_sign_out">Sign Out</a>
-          </li>
-
-          <li class="nav-item">
-          <a class="nav-link"> <%= session.fetch(:user_id) %>
-          </li>
-
-          <% end%>
       </ul>
-  
-
+      </div>
     </nav>
+
+</div>
+
    <% if notice.present? %>
       <div style="border: thin green solid; color: green">
         <%= notice %>
@@ -116,14 +83,16 @@
       </div>
     <% end %>
 
-
+</div>
 
     <%= yield %>
 
 
 
-<footer class="d-flex flex-wrap justify-content-between align-items-center py-2 my-3">
-    <p class="col-md-4 mb-0 text-muted">© 2022 Dev Missles</p>
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-2 my-3">
+    <p class="col-md-4 mx-2 text-muted">
+    © 2022 Dev Missles
+    </p>
 
     <a href="https://github.com/dev-missles" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
       <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
