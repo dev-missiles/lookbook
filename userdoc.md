@@ -1,3 +1,4 @@
+<!-- WIP -->
 # Look Book User Documentation
 Welcome to the Look Book User Documentation page! Here, you'll find all the information you need to use our look book application effectively.
 
