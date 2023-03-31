@@ -97,7 +97,7 @@ See 🚀[contributors](https://github.com/dev-missles/lookbook) for who particip
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 - Big thank you to Raghu, Robert, and Ian our instructors and the wonderful staff members at DPI
-- References - https://github.com/kylelobo/The-Documentation-Compendium a great resource, and our technical writing "blueprint"
+- References - https://github.com/kylelobo/The-Documentation-Compendium a great resource, and technical writing "blueprint"
 <!-- Decide what to putInspiration - Maybe we need maybe we dont? -->
 
 Copyright © 2023 Dev Missiles
