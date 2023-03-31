@@ -21,7 +21,7 @@ Implemented user authentication to allow for personalized collections and prefer
 To update your look book application to the latest version, simply download the new version from our Github repository. Follow the installation instructions provided in the README file.
 
 ## Feedback and Support
-If you encounter any issues or have feedback on the look book application, please submit a Github issue or reach out to our support team [here](supportus@devmissiles.com). We're always looking for ways to improve and provide the best possible user experience.
+If you encounter any issues or have feedback on the look book application, please submit a Github issue or reach out to our support team here at  supportus@devmissiles.com. We're always looking for ways to improve and provide the best possible user experience.
 
 Copyright © 2023 Dev Missiles
 
