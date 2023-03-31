@@ -1,29 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <%= stylesheet_link_tag 'sign_up' %>
+</head>
+<body>
+  <section>
+    <div class = "form-box" >
+      <div class="form-value">
+        <form action="/insert_user" method="post">
+          <h2> Sign Up</h2>
+          
+          <div class="inputbox">
+            <input type="text" id="first_name_box" name="query_first_name" required>
+            <label for="first_name_box" >First name</label>
+          </div>
 
-<div class="container-fluid min-vh-50 d-flex justify-content-center align-items-center">
+          <div class="inputbox">
+            <input type="text" id="last_name_box" name="query_last_name" required>
+            <label for="last_name_box" >Last name</label>
+          </div>
+
+          <div class="inputbox">
+            <ion-icon name="mail-outline"></ion-icon>
+            <input name="query_email" type="email" id="email_box" required>
+            <label for="email_box">Email</label>
+          </div>
+
+          <div class="inputbox">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+            <input id="password_box" name="query_password" type="password" required>
+            <label for="password_box">Password</label>
+          </div>
+
+          <div class="inputbox">
+            <input name="query_password_confirmation" type="password" id="confirm_password_box" required>
+            <label for="confirm_password_box">Confirm Password</label>
+          </div>
+
+          <div class="cohort_box">
+            <label for="cohort-select" class="form-label">Select Cohort</label>
+            <select name="query_cohort_id" id="cohort-select" class="form-select" aria-label="Default select example">
+              <option value="">Select Cohort</option>
+              <option value="1">1 - September 21st</option>
+              <option value="2">2 - January 30th</option>
+              <option value="3">3 - February 27th</option>
+            </select>
+          </div>
+          <button type="submit"> Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</body> 
+</html>
+
+
+<%# <div class="container-fluid min-vh-50 d-flex justify-content-center align-items-center">
 
 <form action="/insert_user" method="post">
 
-  <div class="mb-4 ">
+  <div class="inputbox ">
     <label for="email_box " class="form-label">Email</label>
 
     <input id="email_box" class="form-control border-green" name="query_email" id="exampleInputEmail1" placeholder="Choose an email..." type="text" aria-describebdy="emailHelp">
     <div id="emailHelp" class="form-text"></div>
   </div>
                  
-  <div class="mb-4">
+  <div class="inputbox">
     <label for="first_name_box" class="form-label">First name</label>
       
     <input type="text" class="form-control border-green" placeholder="Enter First Name..."id="first_name_box" name="query_first_name">
   </div>
          
-  <div class="mb-4">
+  <div class="inputbox">
     <label for="last_name_box" class="form-label">Last name</label>
       
     <input type="text" placeholder="Enter Last Name..."class="form-control border-green" id="last_name_box" name="query_last_name">
   </div>
          
   
-  <div class="mb-4">
+  <div class="inputbox">
     <select name="query_cohort_id" id="cohort-select" class="form-select" aria-label="Default select example">
       <option value=""> Select Cohort</option>
       <option value="1">1 - September 21st </option>
@@ -32,13 +92,13 @@
     </select>
   </div>
     
-  <div class="mb-4"> 
+  <div class="inputbox"> 
     <label for="password_box" class="form-label">Password</label>
 
     <input id="password_box" class="form-control border-green" name="query_password" placeholder="Choose a password..." type="password">
   </div>
 
-  <div class="mb-4">
+  <div class="inputbox">
     <label for="password_confirmation_box" class="form-label">Password Confirmation</label>
 
     <input id="password_confirmation_box" class="form-control border-green" name="query_password_confirmation" placeholder="Confirm your password..." type="password">
@@ -68,7 +128,7 @@
     border-color: #75C156;
     width: 350px;
   }
-  .mb-4 {
+  .inputbox {
     padding-top: 20px;
     margin: 20px;
   }
@@ -77,4 +137,4 @@
     border-color: #75C156;
     width: 350px;
   }
-</style>
+</style> %>
