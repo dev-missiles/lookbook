@@ -1,45 +1,61 @@
-<h1 class="py-5">WELCOME TO OUR LOOK BOOK APPRENTICESHIP </h1>
-<div>
-<div>
-Select the cohort
-</div>
+<style>
+  .card {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  }
+</style>
 
-<div class="mb-5">
-  <select id="cohort-select" class="form-select" aria-label="Default select example">
-    <option value="">Select</option>
-    <option value="1">1 - September 21st </option>
-    <option value="2">2 - January 30th </option>
-    <option value="3">3 - February 27th</option>
-  </select>
-</div>
 <div class="container">
-  <div class="row row-cols-4 row-cols-md-4 g-4">
-    <% @list_of_users.each_slice(2) do |users| %>
-      <div class="col">
+
+  <h1 class="py-5">WELCOME TO OUR LOOK BOOK APPRENTICESHIP </h1>
+  <div clss="container">
+    <div class="">
+      Select the cohort
+    </div>
+
+    <div class="mb-5 w-25">
+      <select id="cohort-select" class="form-select" aria-label="Default select example">
+        <option value="">Select</option>
+        <option value="1">1 - September 21st </option>
+        <option value="2">2 - January 30th </option>
+        <option value="3">3 - February 27th</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="m-3">
+    <div class="row row-cols-2 row-cols-md-2 g-4">
+      <% @list_of_users.each_slice(2) do |users| %>
         <% users.each do |user| %>
           <% if user.cohort && user.cohort.id == params[:cohort_id].to_i %>
-            <div class="cohort-<%= user.cohort.id %>">
-              <a href="/users/<%= user.id %>">
-                <div class="card mb-3">
-                  <img src="https://robohash.org/<%= user.image %>" class="card-img-top" alt="...">
-                  <div class="card-body"> 
-                    <td><%= user.first_name %></td>
-                    <td><%= user.last_name %></td> 
-                    <p class="card-text"></p>
-                    <% if user.cohort %>
-                      <td><%= user.cohort.name %></td>
-                    <% else %>
-                      <td>No Cohort Assigned</td>
-                    <% end %>
+            <div class="col">
+              <div class="card rounded-4 cohort-<%= user.cohort.id %>" style="color: white; background-color: #152D55;">
+                <div class="row g-3 ">
+                  <div class="col-sm-5">
+                    <img src="https://robohash.org/<%= user.image %>" class="card-img-top m-3 border border-2 border-light rounded-3" alt="...">
+                  </div>
+                  <div class="col-sm-7">
+                    <div class="card-body position-relative h-100">
+                      <h5 class="card-title"><%= user.first_name %> <%= user.last_name %></h5>
+                      <p class="card-text">
+                        <% if user.cohort %>
+                          <td><%= user.cohort.name %></td>
+                        <% else %>
+                          <td>No Cohort Assigned</td>
+                        <% end %>
+                      </p>
+                      <a href="/users/<%= user.id %>" class="position-absolute bottom-0 end-0 m-3"><i class="fa-solid fa-arrow-right fa-2xl" style="color: #ffffff;"></i></a>
+                    </div>
                   </div>
                 </div>
-              </a>
+              </div>
             </div>
+
           <% end %>
         <% end %>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
+
 </div>
 
 <script>
@@ -50,22 +66,10 @@ Select the cohort
   cohortSelect.addEventListener('change', () => {
     // Get the selected option's value
     const selectedValue = cohortSelect.value;
-    
+
     // Set the cohort ID parameter in the URL
     const url = new URL(window.location.href);
     url.searchParams.set('cohort_id', selectedValue);
     window.location.href = url.toString();
   });
 </script>
-
-
-
-
-
-<style>
-
-.card {
-  background-color: navy;
-  color: white; 
-}
-</style>
