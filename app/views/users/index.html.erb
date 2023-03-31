@@ -1,71 +1,74 @@
 <h1 class="py-5">WELCOME TO OUR LOOK BOOK APPRENTICESHIP </h1>
-<div>
-<div>
-Select the cohort
-</div>
 
-<div class="mb-5">
-  <select id="cohort-select" class="form-select" aria-label="Default select example">
-    <option value="">Select</option>
-    <option value="1">1 - September 21st </option>
-    <option value="2">2 - January 30th </option>
-    <option value="3">3 - February 27th</option>
-  </select>
-</div>
-<div class="container">
-  <div class="row row-cols-4 row-cols-md-4 g-4">
-    <% @list_of_users.each_slice(2) do |users| %>
-      <div class="col">
-        <% users.each do |user| %>
-          <% if user.cohort && user.cohort.id == params[:cohort_id].to_i %>
-            <div class="cohort-<%= user.cohort.id %>">
-              <a href="/users/<%= user.id %>">
-                <div class="card mb-3">
-                  <img src="https://robohash.org/<%= user.image %>" class="card-img-top" alt="...">
-                  <div class="card-body"> 
-                    <td><%= user.first_name %></td>
-                    <td><%= user.last_name %></td> 
-                    <p class="card-text"></p>
-                    <% if user.cohort %>
-                      <td><%= user.cohort.name %></td>
-                    <% else %>
-                      <td>No Cohort Assigned</td>
-                    <% end %>
-                  </div>
-                </div>
-              </a>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
-    <% end %>
+<div>
+  <div>
+    Select the cohort
   </div>
-</div>
 
-<script>
-  // Get a reference to the select element
-  const cohortSelect = document.getElementById('cohort-select');
+  <div class="mb-5">
+    <select id="cohort-select" class="form-select" aria-label="Default select example">
+      <option value="">Select</option>
+      <option value="all">All Cohorts</option>
+      <option value="1">1 - September 21st </option>
+      <option value="2">2 - January 30th </option>
+      <option value="3">3 - February 27th</option>
+    </select>
+  </div>
 
-  // Listen for changes to the select element
-  cohortSelect.addEventListener('change', () => {
-    // Get the selected option's value
-    const selectedValue = cohortSelect.value;
-    
-    // Set the cohort ID parameter in the URL
-    const url = new URL(window.location.href);
-    url.searchParams.set('cohort_id', selectedValue);
-    window.location.href = url.toString();
-  });
-</script>
+  <div class="container">
+    <div class="row row-cols-4 row-cols-md-2 g-2">
+      <% @list_of_users.each_slice(4) do |users| %>
+        <div class="col">
+          <% users.each do |user| %>
+            <% if user.cohort && (params[:cohort_id].blank? || user.cohort.id == params[:cohort_id].to_i) %>
+              <div class="cohort-<%= user.cohort.id %>">
+                <a href="/users/<%= user.id %>">
+                  <div class="card mb-3">
+                    <img src="https://robohash.org/<%= user.image %>" class="card-img-top" alt="...">
+                    <div class="card-body"> 
+                      <td><%= user.first_name %></td>
+                      <td><%= user.last_name %></td> 
+                      <p class="card-text"></p>
+                      <% if user.cohort %>
+                        <td><%= user.cohort.name %></td>
+                      <% else %>
+                        <td>No Cohort Assigned</td>
+                      <% end %>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
+  <script>
+    // Get a reference to the select element
+    const cohortSelect = document.getElementById('cohort-select');
 
+    // Listen for changes to the select element
+    cohortSelect.addEventListener('change', () => {
+      // Get the selected option's value
+      const selectedValue = cohortSelect.value;
+      
+      // Set the cohort ID parameter in the URL
+      const url = new URL(window.location.href);
+      if (selectedValue === "all") {
+        url.searchParams.delete('cohort_id');
+      } else {
+        url.searchParams.set('cohort_id', selectedValue);
+      }
+      window.location.href = url.toString();
+    });
+  </script>
 
+  <style>
+    .card {
+      background-color: navy;
+      color: white; 
+    }
+  </style>
 
-
-<style>
-
-.card {
-  background-color: navy;
-  color: white; 
-}
-</style>
