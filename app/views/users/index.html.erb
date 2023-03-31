@@ -1,3 +1,4 @@
+
 <style>
   .card {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
@@ -55,21 +56,24 @@
       <% end %>
     </div>
   </div>
-
 </div>
 
-<script>
-  // Get a reference to the select element
-  const cohortSelect = document.getElementById('cohort-select');
+  <script>
+    // Get a reference to the select element
+    const cohortSelect = document.getElementById('cohort-select');
 
-  // Listen for changes to the select element
-  cohortSelect.addEventListener('change', () => {
-    // Get the selected option's value
-    const selectedValue = cohortSelect.value;
-
-    // Set the cohort ID parameter in the URL
-    const url = new URL(window.location.href);
-    url.searchParams.set('cohort_id', selectedValue);
-    window.location.href = url.toString();
-  });
-</script>
+    // Listen for changes to the select element
+    cohortSelect.addEventListener('change', () => {
+      // Get the selected option's value
+      const selectedValue = cohortSelect.value;
+      
+      // Set the cohort ID parameter in the URL
+      const url = new URL(window.location.href);
+      if (selectedValue === "all") {
+        url.searchParams.delete('cohort_id');
+      } else {
+        url.searchParams.set('cohort_id', selectedValue);
+      }
+      window.location.href = url.toString();
+    });
+  </script>
