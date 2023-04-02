@@ -61,7 +61,7 @@
 
                   <div class="mt-4">
             <a href="/skills">
-              <button type="button" class="btn btn-light">Go back</button>
+              <button type="button" class="btn btn-dark" style="background-color: #122666;">Go back</button>
             </a>
           </div>
 
@@ -69,7 +69,12 @@
 
             <dl class="row lh-lg gap-2">
               <dt class="col-sm-4 fs-5">Prior skills</dt>
+              <% if @the_skill.prior_skills != nil %>
               <dd class="col-sm-8"><%= @the_skill.prior_skills %></dd>
+              <% else %>
+              <dd class="col-sm-8">Nothing to show</dd>
+              <% end %>
+
 
               <dt class="col-sm-4 fs-5">Current skills</dt>
               <dd class="col-sm-8"><%= @the_skill.current_skills %></dd>
