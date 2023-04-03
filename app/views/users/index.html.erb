@@ -17,13 +17,13 @@
     </div>
 
     <div class="mb-5 w-25">
-      <select id="cohort-select" class="form-select" aria-label="Default select example">
-        <option value="">Select</option>
-        <option value="1">1 - September 21st </option>
-        <option value="2">2 - January 30th </option>
-        <option value="3">3 - February 27th</option>
-      </select>
-    </div>
+    <select id="cohort-select" class="form-select" aria-label="Default select example">
+      <option value="">Select</option>
+      <option value="all">All</option>
+      <% @cohorts.each do |cohort| %>
+        <option value="<%= cohort.id %>"><%= cohort.name %> - <%= cohort.cohort_start.strftime('%B %d, %Y') %></option>
+      <% end %>
+    </select>
   </div>
 
   <div class="m-3">
@@ -62,21 +62,21 @@
 </div>
 
   <script>
-    // Get a reference to the select element
-    const cohortSelect = document.getElementById('cohort-select');
+  // Get a reference to the select element
+  const cohortSelect = document.getElementById('cohort-select');
 
-    // Listen for changes to the select element
-    cohortSelect.addEventListener('change', () => {
-      // Get the selected option's value
-      const selectedValue = cohortSelect.value;
-      
-      // Set the cohort ID parameter in the URL
-      const url = new URL(window.location.href);
-      if (selectedValue === "all") {
-        url.searchParams.delete('cohort_id');
-      } else {
-        url.searchParams.set('cohort_id', selectedValue);
-      }
-      window.location.href = url.toString();
-    });
-  </script>
+  // Listen for changes to the select element
+  cohortSelect.addEventListener('change', () => {
+    // Get the selected option's value
+    const selectedValue = cohortSelect.value;
+    
+    // Set the cohort ID parameter in the URL
+    const url = new URL(window.location.href);
+    if (selectedValue === "" || selectedValue === "all") {
+      url.searchParams.delete('cohort_id');
+    } else {
+      url.searchParams.set('cohort_id', selectedValue);
+    }
+    window.location.href = url.toString();
+  });
+</script>
