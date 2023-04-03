@@ -33,6 +33,7 @@ class UserAuthenticationController < ApplicationController
   end
 
   def sign_up_form
+    @cohorts = Cohort.all
     render({ :template => "user_authentication/sign_up.html.erb" })
   end
 

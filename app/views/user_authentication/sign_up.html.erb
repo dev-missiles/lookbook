@@ -44,11 +44,11 @@
           <div class="cohort_box">
             <label for="cohort-select" class="form-label">Select Cohort</label>
             <select name="query_cohort_id" id="cohort-select" class="form-select" aria-label="Default select example">
-              <option value="">Select Cohort</option>
-              <option value="1">1 - September 21st</option>
-              <option value="2">2 - January 30th</option>
-              <option value="3">3 - February 27th</option>
-            </select>
+            <option value="">Select cohort</option>
+            <% @cohorts.each do |cohort| %>
+              <option value="<%= cohort.id %>"><%= cohort.name %> - <%= cohort.cohort_start.strftime('%B %d, %Y') %></option>
+            <% end %>
+          </select>
           </div>
           <button type="submit"> Sign Up</button>
         </form>
