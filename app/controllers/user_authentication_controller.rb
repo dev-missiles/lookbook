@@ -58,10 +58,12 @@ class UserAuthenticationController < ApplicationController
   end
     
   def edit_profile_form
+    @cohorts = Cohort.all
     render({ :template => "user_authentication/edit_profile.html.erb" })
   end
 
   def update
+    @cohorts = Cohort.all
     @user = @current_user
     @user.email = params.fetch("query_email")
     @user.password = params.fetch("query_password")
